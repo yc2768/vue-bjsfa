@@ -72,9 +72,8 @@
 </template>
 
 <script>
-
-
     import "../assets/font/iconfont.css";
+    import { Indicator } from 'mint-ui';
 
     export default {
         name: "Login",
@@ -100,7 +99,22 @@
                 this.autologin && (this.rememb = true);
             },
             loginBtnClick:function () {
-                console.log('Login....');
+                /*console.log('Login....');*/
+                // 判断当前是否校验全部通过
+                // this.errors.any(); // boolean 如果有有错误那么返回true,否则 false
+                if(this.errors.any())
+                {
+                    return;
+                }
+                // 弹出等待的遮罩 层,防止二次点击.
+                Indicator.open("正在登录...");
+                // 发送ajax请求 ,  axios
+                setTimeout(() => {
+                  Indicator.close();
+                }, 2000);
+
+
+
             }
         }
     }

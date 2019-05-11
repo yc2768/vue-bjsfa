@@ -13,3 +13,73 @@ npm  install vee-validate --save
 引入到main.js中去
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
+
+
+安装mint-ui
+npm install mint-ui -S
+在main.js中
+// 引入mint ui的样式
+import 'mint-ui/lib/style.css';
+// 引入全部组件
+import Mint from 'mint-ui';
+Vue.use(Mint);
+// 按需引入部分组件
+import { Cell, Checklist } from 'minu-ui';
+Vue.component(Cell.name, Cell);
+Vue.component(Checklist.name, Checklist);
+按需引入
+借助 babel-plugin-component，我们可以只引入需要的组件，以达到减小项目体积的目的。
+首先，安装 babel-plugin-component：
+npm install babel-plugin-component -D
+vue2中
+然后，将 .babelrc 修改为：
+{
+  "presets": [
+    ["env", { "modules": false }]
+  ],
+  "plugins": [["component",
+    {
+      "libraryName": "mint-ui",
+      "style": true
+    }
+   ]]
+}
+
+vue3 在babel.config.js中如下配置
+ module.exports = {
+   presets: ["@vue/app"],
+     plugins: [
+         [
+             "component",
+             {
+                 libraryName: "mint-ui",
+                 style: true
+             }
+         ]
+     ]
+ };
+
+如果你只希望引入部分组件，比如 Button 和 Cell，那么需要在 main.js 中写入以下内容：
+import Vue from 'vue'
+import { Button, Cell } from 'mint-ui'
+import App from './App.vue'
+
+Vue.component(Button.name, Button)
+Vue.component(Cell.name, Cell)
+/* 或写为
+ * Vue.use(Button)
+ * Vue.use(Cell)
+ */
+
+new Vue({
+  el: '#app',
+  components: { App }
+})
+
+
+
+在Login.Vue中使用
+在script中导入
+import { Indicator } from 'mint-ui';
+在登录方法中调用加载转圈
+Indicator.open("正在登录...");
