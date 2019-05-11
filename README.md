@@ -1,4 +1,5 @@
 # vue-bjsfa
+项目技术要点：Sass,用px2rem实现移动端自动布局
 
 ## Project setup
 ```

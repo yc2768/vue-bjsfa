@@ -8,3 +8,8 @@ vue3 运行单独一个.vue文件
 1.npm install -g @vue/cli-service-global
 2.vue serve  About.vue
 
+vue 安装输入框校验插件
+npm  install vee-validate --save
+引入到main.js中去
+import VeeValidate from 'vee-validate';
+Vue.use(VeeValidate);
