@@ -1,0 +1,10 @@
+运行vue3 项目
+npm run serve
+
+安装插件  安装UI库适合下面操作
+vue add vuetify
+
+vue3 运行单独一个.vue文件
+1.npm install -g @vue/cli-service-global
+2.vue serve  About.vue
+
