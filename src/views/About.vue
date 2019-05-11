@@ -3,3 +3,16 @@
     <h1>This is an about page</h1>
   </div>
 </template>
+
+<script>
+
+  export  default { }
+</script>
+
+<style lang="scss" scoped>
+  h1{
+    height: px2rem(100);
+    background-color: skyblue;
+  }
+
+</style>
