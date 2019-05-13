@@ -74,6 +74,9 @@
 <script>
     import "../assets/font/iconfont.css";
     import { Indicator } from 'mint-ui';
+    // import {mapMutations} from "vuex";
+    import axios from "axios";
+    import services from "../service";
 
     export default {
         name: "Login",
@@ -86,6 +89,9 @@
                 rememb: false,
                 autologin: false
             }
+        },
+        mounted(){
+
         },
         methods:{
             remembSet:function () {

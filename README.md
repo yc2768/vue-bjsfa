@@ -1,5 +1,6 @@
 # vue-bjsfa
-项目技术要点：Sass,用px2rem实现移动端自动布局
+使用VueCli3
+项目技术要点：Sass使用,用px2rem实现移动端自动布局,使用Mint-UI以及配置，使用axios异步请求接口，使用echarts做图表
 
 ## Project setup
 ```
